@@ -1,5 +1,6 @@
 package vn.edu.usth.usthweather;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -8,24 +9,33 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
-public class Weatheractivity extends AppCompatActivity {
+
+public class WeatherActivity extends AppCompatActivity {
     private static final String TAG = "Weather";
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+//        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_weather);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+//            return insets;
+//        });
         Log.i(TAG, "Create");
 
-        ForecastFragment firstFragment = new ForecastFragment();
+        HomeFragmentPagerAdapter adapter = new HomeFragmentPagerAdapter(this);
+        ViewPager2 viewPager2 = findViewById(R.id.view_pager);
+        viewPager2.setOffscreenPageLimit(3);
+        viewPager2.setAdapter(adapter);
 
-        getSupportFragmentManager().beginTransaction().add(R.id.main, firstFragment).commit();
+//        ForecastFragment firstFragment = new ForecastFragment();
+//
+//        getSupportFragmentManager().beginTransaction().replace(R.id.main, firstFragment).commit();
     }
 
     @Override

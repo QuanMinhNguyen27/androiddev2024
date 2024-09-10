@@ -46,31 +46,32 @@ public class ForecastFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Create the root LinearLayout
-        LinearLayout linearLayout = new LinearLayout(getContext());
-        linearLayout.setLayoutParams(new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.MATCH_PARENT));
-        linearLayout.setOrientation(LinearLayout.VERTICAL);
-        linearLayout.setBackgroundColor(Color.parseColor("#20FF0000"));
-        linearLayout.setGravity(Gravity.CENTER);
-
-        // Create a TextView for the day (e.g., Thursday)
-        TextView dayTextView = new TextView(getContext());
-        dayTextView.setText("Thursday");
-        dayTextView.setTextSize(24);
-        dayTextView.setGravity(Gravity.CENTER);
-        dayTextView.setPadding(16, 16, 16, 16);
-
-        // Create an ImageView for the weather icon
-        ImageView weatherIcon = new ImageView(getContext());
-        weatherIcon.setImageResource(R.drawable.cloudset); // Ensure this resource exists
-        weatherIcon.setPadding(16, 16, 16, 16);
-
-        // Add the TextView and ImageView to the LinearLayout
-        linearLayout.addView(dayTextView);
-        linearLayout.addView(weatherIcon);
-
-        // Return the LinearLayout as the root view
-        return linearLayout;
+//        LinearLayout linearLayout = new LinearLayout(getContext());
+//        linearLayout.setLayoutParams(new LinearLayout.LayoutParams(
+//                LinearLayout.LayoutParams.MATCH_PARENT,
+//                LinearLayout.LayoutParams.MATCH_PARENT));
+//        linearLayout.setOrientation(LinearLayout.VERTICAL);
+//        linearLayout.setBackgroundColor(Color.parseColor("#20FF0000"));
+//        linearLayout.setGravity(Gravity.CENTER);
+//
+//        // Create a TextView for the day (e.g., Thursday)
+//        TextView dayTextView = new TextView(getContext());
+//        dayTextView.setText("Thursday");
+//        dayTextView.setTextSize(24);
+//        dayTextView.setGravity(Gravity.CENTER);
+//        dayTextView.setPadding(16, 16, 16, 16);
+//
+//        // Create an ImageView for the weather icon
+//        ImageView weatherIcon = new ImageView(getContext());
+//        weatherIcon.setImageResource(R.drawable.cloudset); // Ensure this resource exists
+//        weatherIcon.setPadding(16, 16, 16, 16);
+//
+//        // Add the TextView and ImageView to the LinearLayout
+//        linearLayout.addView(dayTextView);
+//        linearLayout.addView(weatherIcon);
+//
+//        // Return the LinearLayout as the root view
+//        return linearLayout;
+        return inflater.inflate(R.layout.fragment_forecast, container, false);
     }
 }
