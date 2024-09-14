@@ -1,28 +1,32 @@
 package vn.edu.usth.usthweather;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.Gravity;
+
+import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.fragment.app.Fragment;
 
 
 public class ForecastFragment extends Fragment {
 
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
 
     private String mParam1;
     private String mParam2;
 
     public ForecastFragment() {
-        // Required empty public constructor
     }
+
 
     public static ForecastFragment newInstance(String param1, String param2) {
         ForecastFragment fragment = new ForecastFragment();
@@ -42,36 +46,31 @@ public class ForecastFragment extends Fragment {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Create the root LinearLayout
-//        LinearLayout linearLayout = new LinearLayout(getContext());
-//        linearLayout.setLayoutParams(new LinearLayout.LayoutParams(
-//                LinearLayout.LayoutParams.MATCH_PARENT,
-//                LinearLayout.LayoutParams.MATCH_PARENT));
-//        linearLayout.setOrientation(LinearLayout.VERTICAL);
-//        linearLayout.setBackgroundColor(Color.parseColor("#20FF0000"));
-//        linearLayout.setGravity(Gravity.CENTER);
+        // Inflate the layout for this fragment
+//        View view = new View(getContext());
+//        view.setBackgroundColor(Color.parseColor("#20FF0000"));
 //
-//        // Create a TextView for the day (e.g., Thursday)
-//        TextView dayTextView = new TextView(getContext());
-//        dayTextView.setText("Thursday");
-//        dayTextView.setTextSize(24);
-//        dayTextView.setGravity(Gravity.CENTER);
-//        dayTextView.setPadding(16, 16, 16, 16);
+//        LinearLayout layout = new LinearLayout(getContext());
+//        layout.setOrientation(LinearLayout.VERTICAL);
 //
-//        // Create an ImageView for the weather icon
-//        ImageView weatherIcon = new ImageView(getContext());
-//        weatherIcon.setImageResource(R.drawable.cloudset); // Ensure this resource exists
-//        weatherIcon.setPadding(16, 16, 16, 16);
+//        ImageView imageview = new ImageView(getContext());
+//        TextView textview = new TextView(getContext());
 //
-//        // Add the TextView and ImageView to the LinearLayout
-//        linearLayout.addView(dayTextView);
-//        linearLayout.addView(weatherIcon);
+//        textview.setText("Thursday");
+//        textview.setTextColor(Color.BLACK);
 //
-//        // Return the LinearLayout as the root view
-//        return linearLayout;
+//        imageview.setImageResource(R.drawable.image_set);
+////        imageview.setImageResource(R.drawable.sun);
+////        imageview.setImageResource(R.drawable.snowflake);
+////        imageview.setImageResource(R.drawable.cloudy);
+//
+//        layout.addView(textview);
+//        layout.addView(imageview);
+//        return layout;
         return inflater.inflate(R.layout.fragment_forecast, container, false);
     }
 }

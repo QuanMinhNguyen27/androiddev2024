@@ -3,7 +3,6 @@ package vn.edu.usth.usthweather;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -11,6 +10,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager2.widget.ViewPager2;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 
 public class WeatherActivity extends AppCompatActivity {
@@ -28,10 +29,16 @@ public class WeatherActivity extends AppCompatActivity {
 //        });
         Log.i(TAG, "Create");
 
+        String[] cities = new String[]{"Hanoi, Vietnam", "London, England", "Beijing, China"};
         HomeFragmentPagerAdapter adapter = new HomeFragmentPagerAdapter(this);
         ViewPager2 viewPager2 = findViewById(R.id.view_pager);
         viewPager2.setOffscreenPageLimit(3);
         viewPager2.setAdapter(adapter);
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        new TabLayoutMediator(tabLayout, viewPager2, (tab, position) -> {
+
+            tab.setText(cities[position]);
+        }).attach();
 
 //        ForecastFragment firstFragment = new ForecastFragment();
 //

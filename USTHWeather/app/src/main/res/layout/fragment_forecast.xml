@@ -7,10 +7,6 @@
     android:orientation = "vertical"
     android:gravity="center"
     tools:context=".ForecastFragment">
-    <!--    android:paddingTop="100dp"-->
-    <!--    android:paddingLeft="40dp"-->
-    <!--    android:paddingRight="40dp"-->
-    <!--    android:paddingBottom="40dp"-->
 
 
     <LinearLayout
@@ -19,36 +15,43 @@
         android:gravity="center_vertical"
         android:layout_gravity="center"
         android:orientation="horizontal"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:padding="20dp"
         android:background="#66ebfa">
-        <!--        android:padding="20dp">-->
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:layout_marginEnd="63dp"
-            android:text="@string/monday"
-            android:textColor="@color/black" />
+            android:layout_marginEnd="35dp"
+            android:text="MON"
+            android:textStyle="bold"
+            android:textColor="#522377" />
+
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginEnd="50dp"
             android:adjustViewBounds="true"
             android:contentDescription="@string/cloudy"
             android:scaleType="fitCenter"
             android:src="@drawable/cloudy" />
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="75dp"
+            android:layout_marginStart="8dp"
+            android:text="Cloudy"
+            android:textColor="#522377"
+            android:textSize="16sp" />
+
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:text="@string/cloud_temp"
-            android:textColor="@color/black"
+            android:text="20°C - 28°C"
+            android:textColor="#522377"
             android:layout_weight="1"/>
     </LinearLayout>
 
@@ -58,32 +61,42 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:layout_gravity="center"
-        android:padding="16dp"
+        android:padding="20dp"
         android:background="#66ebfa">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tuesday"
-            android:textColor="@color/black"
+            android:layout_marginEnd="40dp"
             android:gravity="center_vertical"
-            android:layout_marginEnd="65dp" />
+            android:text="TUE"
+            android:textStyle="bold"
+            android:textColor="#522377" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginEnd="50dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:src = "@drawable/snowflake"
             android:contentDescription="@string/snowy" />
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="80dp"
+            android:layout_marginStart="8dp"
+            android:text="Snowy"
+            android:textColor="#522377"
+            android:textSize="16sp" />
+
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:layout_weight="1"
-            android:text="@string/snowy_temp"
-            android:textColor="@color/black"/>
+            android:text="-10°C - -5°C"
+            android:textColor="#522377" />
     </LinearLayout>
 
     <LinearLayout
@@ -94,30 +107,84 @@
         android:layout_gravity="center"
         android:padding="20dp"
         android:background="#66ebfa">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:layout_marginEnd="40dp"
-            android:text="@string/wednesday"
-            android:textColor="@color/black" />
+            android:layout_marginEnd="35dp"
+            android:text="WED"
+            android:textStyle="bold"
+            android:textColor="#533277" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginEnd="50dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:src="@drawable/sun"
             android:contentDescription="@string/sunny" />
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="8dp"
+            android:text="Sunny and hot"
+            android:textColor="#522377"
+            android:textSize="16sp" />
+
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="@string/sunny_temp"
-            android:textColor="@color/black" />
+            android:text="35°C - 40°C"
+            android:textColor="#522377" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_gravity="center"
+        android:padding="20dp"
+        android:background="#66ebfa">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:gravity="center_vertical"
+            android:text="THUS"
+            android:textStyle="bold"
+            android:textColor="#522377" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/rainy"
+            android:scaleType="fitCenter"
+            android:src="@drawable/rainy" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="90dp"
+            android:layout_marginStart="8dp"
+            android:text="Rainy"
+            android:textColor="#522377"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="20°C - 28°C"
+            android:textColor="#522377" />
     </LinearLayout>
 
     <LinearLayout
@@ -131,129 +198,127 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="55dp"
+            android:layout_marginEnd="45dp"
             android:gravity="center_vertical"
-            android:text="@string/thursday"
-            android:textColor="@color/black" />
+            android:text="FRI"
+            android:textStyle="bold"
+            android:textColor="#522377" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:layout_marginEnd="50dp"
-            android:src="@drawable/rainy"
-            android:contentDescription="@string/rainy" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="@string/rain_temp"
-            android:textColor="@color/black" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_gravity="center"
-        android:padding="20dp"
-        android:background="#66ebfa">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="74dp"
-            android:gravity="center_vertical"
-            android:text="@string/friday"
-            android:textColor="@color/black" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:layout_marginEnd="50dp"
             android:src="@drawable/thunder"
             android:contentDescription="@string/thunder" />
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="@string/thunder_temp"
-            android:textColor="@color/black" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_gravity="center"
-        android:padding="20dp"
-        android:background="#66ebfa">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="57dp"
-            android:gravity="center_vertical"
-            android:text="@string/saturday"
-            android:textColor="@color/black" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginEnd="50dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/typhoon"
-            android:contentDescription="@string/typhoon" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="@string/typhoon_temp"
-            android:textColor="@color/black" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_gravity="center"
-        android:padding="20dp"
-        android:background="#66ebfa">
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="70dp"
-            android:gravity="center_vertical"
-            android:text="@string/sunday"
-            android:textColor="@color/black" />
+            android:layout_marginStart="8dp"
+            android:text="Thunder"
+            android:textColor="#522377"
+            android:textSize="16sp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginEnd="50dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/sun"
-            android:contentDescription="@string/sunny" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="@string/sunny_temp"
-            android:textColor="@color/black"/>
+            android:text="23°C - 27°C"
+            android:textColor="#522377" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#66ebfa"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:gravity="center_vertical"
+            android:text="SAT"
+            android:textColor="#522377"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/typhoon"
+            android:scaleType="fitCenter"
+            android:src="@drawable/typhoon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="70dp"
+            android:text="Typhoon"
+            android:textColor="#522377"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="21°C - 25°C"
+            android:textColor="#522377" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#66ebfa"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:gravity="center_vertical"
+            android:text="SUN"
+            android:textColor="#522377"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/sunny"
+            android:scaleType="fitCenter"
+            android:src="@drawable/sun" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="30dp"
+            android:text="Sunny and hot"
+            android:textColor="#522377"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="35°C - 40°C"
+            android:textColor="#522377" />
     </LinearLayout>
 
 
