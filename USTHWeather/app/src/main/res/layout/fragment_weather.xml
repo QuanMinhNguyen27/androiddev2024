@@ -4,27 +4,26 @@
     android:id="@+id/fragment_weather"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7fffd4"
-    tools:context=".WeatherFragment"
-    tools:ignore="ExtraText">
+    android:background="@drawable/frame"
+    tools:context=".WeatherFragment">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginTop="15dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="90dp"
         android:text="Sunday"
         android:textColor="#522377"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"/>
 
     <ImageView
         android:id="@+id/weather_icon"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:src="@drawable/sunny" />
+        android:src="@drawable/sunny"/>
 
     <TextView
         android:id="@+id/city_name"
@@ -32,10 +31,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="90dp"
         android:text="Hanoi"
         android:textColor="#522377"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"/>
 
 </RelativeLayout>

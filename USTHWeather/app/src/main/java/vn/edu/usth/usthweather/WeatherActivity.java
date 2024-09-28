@@ -1,17 +1,29 @@
 package vn.edu.usth.usthweather;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import android.view.Menu;
+import android.view.MenuItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class WeatherActivity extends AppCompatActivity {
@@ -29,7 +41,7 @@ public class WeatherActivity extends AppCompatActivity {
 //        });
         Log.i(TAG, "Create");
 
-        String[] cities = new String[]{"Hanoi, Vietnam", "London, England", "Beijing, China"};
+        String[] cities = new String[]{"Hanoi, Vietnam", "Paris, France", "Melbourne, Australia"};
         HomeFragmentPagerAdapter adapter = new HomeFragmentPagerAdapter(this);
         ViewPager2 viewPager2 = findViewById(R.id.view_pager);
         viewPager2.setOffscreenPageLimit(3);
@@ -40,10 +52,55 @@ public class WeatherActivity extends AppCompatActivity {
             tab.setText(cities[position]);
         }).attach();
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        MediaPlayer mediaPlayer = MediaPlayer.create(WeatherActivity.this, R.raw.sample);
+        mediaPlayer.setLooping(true);
+        mediaPlayer.start();
+
+
+//          Forecast1Fragment forecast1Fragment = new Forecast1Fragment();
+//          getSupportFragmentManager().beginTransaction().replace(R.id.main, forecast1Fragment).commit();
 //        ForecastFragment firstFragment = new ForecastFragment();
 //
 //        getSupportFragmentManager().beginTransaction().replace(R.id.main, firstFragment).commit();
+
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.bottom_bar_menu, menu);
+        return true;
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_weather);
+
+        // Copy the MP3 file to external storage
+        copyMp3ToExternalStorage();
+
+        // Play the MP3 file
+        playMp3FromExternalStorage();
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.refresh) {
+            Toast.makeText(this, "Refresh clicked", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (item.getItemId() == R.id.dots) {
+            Intent intent = new Intent(this, PrefActivity.class);
+            startActivity(intent);
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
 
     @Override
     protected void onStart()

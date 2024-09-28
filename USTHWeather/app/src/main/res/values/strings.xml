@@ -22,4 +22,8 @@
     <string name="typhoon">Typhoon</string>
     <string name="typhoon_temp">21°C - 25°C</string>
     <string name="Hanoi">Hanoi</string>
+    <string name="refresh_icon">refresh_icon</string>
+    <string name="three_dots">three_dots\n</string>
+    <string name="day">day\n</string>
+    <string name="DAy">Day</string>
 </resources>
