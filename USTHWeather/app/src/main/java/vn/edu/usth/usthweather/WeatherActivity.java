@@ -74,18 +74,6 @@ public class WeatherActivity extends AppCompatActivity {
         return true;
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_weather);
-
-        // Copy the MP3 file to external storage
-        copyMp3ToExternalStorage();
-
-        // Play the MP3 file
-        playMp3FromExternalStorage();
-    }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
