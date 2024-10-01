@@ -21,6 +21,6 @@
         android:layout_height="wrap_content"
         android:name="vn.edu.usth.usthweather.Forecast1Fragment"
         android:id = "@+id/fragment_forecast1"
-        tools:layout = "@layout/fragment_forecast1" />
+        tools:layout = "@layout/fragment_forecast2" />
 
 </LinearLayout>

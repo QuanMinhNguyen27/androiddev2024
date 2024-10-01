@@ -23,4 +23,8 @@
     <string name="typhoon">Lốc xoáy</string>
     <string name="typhoon_temp">21°C - 25°C</string>
     <string name="Hanoi" translatable="false">Hà Nội</string>
+    <string name="refresh_icon">làm mới</string>
+    <string name="three_dots">3 chấm\n</string>
+    <string name="day">ngày\n</string>
+    <string name="DAy">Ngày</string>
 </resources>
