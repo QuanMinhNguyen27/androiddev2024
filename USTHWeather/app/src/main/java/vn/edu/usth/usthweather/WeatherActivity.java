@@ -4,6 +4,9 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -27,19 +30,16 @@ import java.util.List;
 
 
 public class WeatherActivity extends AppCompatActivity {
+    private Refresh refresh;
     private static final String TAG = "Weather";
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_weather);
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-//            return insets;
-//        });
         Log.i(TAG, "Create");
+
+        ForecastFragment firstFragment = new ForecastFragment();
 
         String[] cities = new String[]{"Hanoi, Vietnam", "Paris, France", "Melbourne, Australia"};
         HomeFragmentPagerAdapter adapter = new HomeFragmentPagerAdapter(this);
@@ -55,16 +55,20 @@ public class WeatherActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        MediaPlayer mediaPlayer = MediaPlayer.create(WeatherActivity.this, R.raw.sample);
-        mediaPlayer.setLooping(true);
+        MediaPlayer mediaPlayer = MediaPlayer.create(WeatherActivity.this, R.raw.music);
         mediaPlayer.start();
 
+        getSupportFragmentManager().beginTransaction().add(R.id.main, firstFragment).commit();
 
-//          Forecast1Fragment forecast1Fragment = new Forecast1Fragment();
-//          getSupportFragmentManager().beginTransaction().replace(R.id.main, forecast1Fragment).commit();
-//        ForecastFragment firstFragment = new ForecastFragment();
-//
-//        getSupportFragmentManager().beginTransaction().replace(R.id.main, firstFragment).commit();
+        final Handler handler = new Handler(Looper.getMainLooper()) {
+            @Override
+            public void handleMessage(Message msg) {
+                String content = msg.getData().getString("server_response");
+                Toast.makeText(WeatherActivity.this, content, Toast.LENGTH_SHORT).show();
+            }
+        };
+
+        refresh = new Refresh(handler);
 
     }
 
@@ -78,7 +82,7 @@ public class WeatherActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.refresh) {
-            Toast.makeText(this, "Refresh clicked", Toast.LENGTH_SHORT).show();
+            refresh.NetworkRequest();
             return true;
         } else if (item.getItemId() == R.id.dots) {
             Intent intent = new Intent(this, PrefActivity.class);

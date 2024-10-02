@@ -26,4 +26,5 @@
     <string name="three_dots">three_dots\n</string>
     <string name="day">day\n</string>
     <string name="DAy">Day</string>
+    <string name="menu" />
 </resources>
